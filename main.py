@@ -1,4 +1,5 @@
 import math
+#+, -, *, /
 def basicMath():
   equation = input('Enter the equation: ')
   spltEquation = equation.split(' ')
@@ -26,6 +27,7 @@ def basicMath():
     return '\n'
   else:
     return equation[0]
+#^,sqrt,abs
 def advancedMath():
   equation = input('Enter the equation: ')
   spltEquation = equation.split(' ')
@@ -52,6 +54,7 @@ def advancedMath():
   else:
     return equation[0]
   equation = input('Enter the equation: ')
+#spimplifing fractions
 def fractionSimplification():
   numerator = int(input("Enter the numerator: "))
   denominator = int(input("Enter the denominator: "))
@@ -59,6 +62,7 @@ def fractionSimplification():
   numerator = numerator / gcd
   denominator = denominator / gcd
   return numerator / denominator
+#Idenifing systems of equations
 def systemeOfEquations():
   goe = input('Do you have a graph(g) or an equation(e)? ')
   if goe == 'g':
@@ -82,7 +86,8 @@ def systemeOfEquations():
       return "No soultions"
     elif (y1 == y2) and (b1 == b2):
       return "Infinite soultions"
-def untRate():
+#Unit rates
+def unitRates():
   numerator = int(input("Enter the numerator: "))
   denominator = int(input("Enter the denominator: "))
   gcd = math.gcd(numerator, denominator)
@@ -94,7 +99,7 @@ def untRate():
   else:
     return f"{numerator}/{denominator}"
 
-guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)')
+guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)\n')
 
 typeOfMath = int(input('Enter the type of math you want to do: '))
 if typeOfMath == 1:
@@ -104,9 +109,8 @@ elif typeOfMath == 2:
 elif typeOfMath == 3:
   print(f" The is the simplist form of your fraction: {fractionSimplification()}")
 elif typeOfMath == 4:
-  print(f"Your unit rate is: {untRate()}")
+  print(f"Your unit rate is: {unitRates()}")
 elif typeOfMath == 5:
-  print(f" The answer is {advancedMath()}")
-  
+  print(f"The answer is {advancedMath()}")
 else:
   print('Invalid input')
