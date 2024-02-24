@@ -26,6 +26,32 @@ def basicMath():
     return '\n'
   else:
     return equation[0]
+def advancedMath():
+  equation = input('Enter the equation: ')
+  spltEquation = equation.split(' ')
+  equation = []
+  symbols = []
+  vaild = True
+  for i in spltEquation:
+    if i.strip('-').isdigit():
+      equation.append(float(i))
+    else:
+      symbols.append(i)
+  for i in symbols:
+    if i == '^':
+      equation.append(equation.pop(0) ** equation.pop(0))
+    elif i == 'sqrt':
+      equation.append(math.sqrt(equation.pop(0)))
+    elif i == 'abs':
+      equation.append(abs(equation.pop(0)))
+    else:
+      vaild = False
+      return 'Invalid equation'
+  if not vaild:
+    return '\n'
+  else:
+    return equation[0]
+  equation = input('Enter the equation: ')
 def fractionSimplification():
   numerator = int(input("Enter the numerator: "))
   denominator = int(input("Enter the denominator: "))
@@ -68,7 +94,7 @@ def untRate():
   else:
     return f"{numerator}/{denominator}"
 
-guide = print('1 = Basic Math\n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n')
+guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)')
 
 typeOfMath = int(input('Enter the type of math you want to do: '))
 if typeOfMath == 1:
@@ -79,5 +105,8 @@ elif typeOfMath == 3:
   print(f" The is the simplist form of your fraction: {fractionSimplification()}")
 elif typeOfMath == 4:
   print(f"Your unit rate is: {untRate()}")
+elif typeOfMath == 5:
+  print(f" The answer is {advancedMath()}")
+  
 else:
   print('Invalid input')
