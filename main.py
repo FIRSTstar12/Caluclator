@@ -21,7 +21,7 @@ for i in symbols:
     print('Invalid equation')
     vaild = False
     break
-if vaild == False:
+if not vaild:
   print('\n')
 else:
   print(f"The answer is {equation}")
