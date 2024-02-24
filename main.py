@@ -2,6 +2,7 @@ equation = input()
 spltEquation = equation.split(' ')
 equation = []
 symbols = []
+vaild = True
 for i in spltEquation:
   if i.strip('-').isdigit():
     equation.append(int(i))
@@ -18,6 +19,9 @@ for i in symbols:
     equation.append(equation.pop(0) / equation.pop(0))
   else:
     print('Invalid equation')
+    vaild = False
     break
-  
-print(f"The answer is {equation}")
+if vaild == False:
+  print('\n')
+else:
+  print(f"The answer is {equation}")
