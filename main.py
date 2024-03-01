@@ -252,25 +252,73 @@ def volumeOfShape():
     return volume
   else:
     return 'Invalid shape'
+#probibility
+def probibility():
+  event = int(input('How many events are there? '))
+  sample = int(input('How many samples are there? '))
+  prob = event / sample
+  return prob
+#percentages
+def percents():
+  num = float(input('What is the number? '))
+  percent = float(input('What is the percent? '))
+  percent = percent / 100
+  answer = num * percent
+  return answer
+#percent increase
+def percentIncrease():
+  num = float(input('What is the number? '))
+  percent = float(input('What is the percent? '))
+  percent = percent / 100
+  answer = num * percent + num
+  return answer
+#percent decrease
+def percentDecrease():
+  num = float(input('What is the number? '))
+  percent = float(input('What is the percent? '))
+  percent = percent / 100
+  answer = num - num * percent
+  return answer
 
-guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)\n6 = Unit Conversion\n7 = Area of a shape\n8 = Volume of a shape\n')
-
-typeOfMath = int(input('Enter the type of math you want to do: '))
-if typeOfMath == 1:
-  print(f" The answer is {basicMath()}")
-elif typeOfMath == 2:
-  print(f" Your problem has {systemeOfEquations()}")
-elif typeOfMath == 3:
-  print(f" The is the simplist form of your fraction: {fractionSimplification()}")
-elif typeOfMath == 4:
-  print(f"Your unit rate is: {unitRates()}")
-elif typeOfMath == 5:
-  print(f"The answer is {advancedMath()}")
-elif typeOfMath == 6:
-  unitConversion()
-elif typeOfMath == 7:
-  print(areaOfShape)
-elif typeOfMath == 8:
-  print(volumeOfShape)
-else:
-  print('Invalid input')
+guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)\n6 = Unit Conversion\n7 = Area of a shape\n8 = Volume of a shape\n9 = probibilty\n10 = percents\n11 percent increase\n12 percent decrease \n13 = Quit')
+quit = False
+while not quit:
+  typeOfMath = int(input('Enter the type of math you want to do: '))
+  if typeOfMath == 1:
+    print(f" The answer is {basicMath()}")
+    quit = True
+  elif typeOfMath == 2:
+    print(f" Your problem has {systemeOfEquations()}")
+    quit = True
+  elif typeOfMath == 3:
+    print(f" The is the simplist form of your fraction: {fractionSimplification()}")
+    quit = True
+  elif typeOfMath == 4:
+    print(f"Your unit rate is: {unitRates()}")
+    quit = True
+  elif typeOfMath == 5:
+    print(f"The answer is {advancedMath()}")
+    quit = True
+  elif typeOfMath == 6:
+    unitConversion()
+    quit = True
+  elif typeOfMath == 7:
+    print('square\n rectange\n triangle\n circle\n trapezoid\n parallelogram\n rhombus\n')
+    print(areaOfShape)
+    quit = True
+  elif typeOfMath == 8:
+    print('cube\n rectangular prism\n cylinder\n cone\n sphere\n pyramid\n prism')
+    print(volumeOfShape)
+  elif typeOfMath == 9:
+    print(f"The probibility is {probibility()}")
+  elif typeOfMath == 10:
+    print(f"The percent is {percents()}")
+  elif typeOfMath == 11:
+    print(f"The percent increase is {percentIncrease()}")
+  elif typeOfMath == 12:
+    print(f"The percent decrease is {percentDecrease()}")
+  elif typeOfMath == 13:
+    quit = True
+  else:
+    print('Invalid input')
+    quit = False
