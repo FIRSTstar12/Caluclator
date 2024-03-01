@@ -174,7 +174,86 @@ def unitConversion():
   elif (unit == 'mi') and (unit == 'm'): 
     miToM = num * 1609.34
     print(miToM)
-guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)\n6 = Unit Conversion\n')
+#area of a shape
+def areaOfShape():
+  shape = input('What shape are you finding the area of? ')
+  if shape == 'square':
+    length = float(input('What is the length of the square? '))
+    area = length ** 2
+    return area
+  elif shape == 'rectangle':
+    length = float(input('What is the length of the rectangle? '))
+    width = float(input('What is the width of the rectangle? '))
+    area = length * width
+    return area
+  elif shape == 'triangle':
+    base = float(input('What is the base of the triangle? '))
+    height = float(input('What is the height of the triangle? '))
+    area = base * height / 2
+    return area
+  elif shape == 'circle':
+    radius = float(input('What is the radius of the circle? '))
+    area = math.pi * radius ** 2
+    return area
+  elif shape == 'trapezoid':
+    base1 = float(input('What is the length of the first base? '))
+    base2 = float(input('What is the length of the second base? '))
+    height = float(input('What is the height of the trapezoid? '))
+    area = (base1 + base2) / 2 * height
+    return area
+  elif shape == 'parallelogram':
+    base = float(input('What is the base of the parallelogram? '))
+    height = float(input('What is the height of the parallelogram? '))
+    area = base * height
+    return area
+  elif shape == 'rhombus':
+    diagonal1 = float(input('What is the length of the first diagonal? '))
+    diagonal2 = float(input('What is the length of the second diagonal? '))
+    area = diagonal1 * diagonal2 / 2
+    return area
+  else:
+    return 'Invalid shape'
+#volume of a shape
+def volumeOfShape():
+  shape = input('What shape are you finding the volume of? ')
+  if shape == 'cube':
+    length = float(input('What is the length of the cube? '))
+    volume = length ** 3
+    return volume
+  elif shape == 'rectangular prism':
+    length = float(input('What is the length of the rectangular prism? '))
+    width = float(input('What is the width of the rectangular prism? '))
+    height = float(input('What is the height of the rectangular prism? '))
+    volume = length * width * height
+    return volume
+  elif shape == 'cylinder':
+    radius = float(input('What is the radius of the cylinder? '))
+    height = float(input('What is the height of the cylinder? '))
+    volume = math.pi * radius ** 2 * height
+    return volume
+  elif shape == 'cone':
+    radius = float(input('What is the radius of the cone? '))
+    height = float(input('What is the height of the cone? '))
+    volume = math.pi * radius ** 2 * height / 3
+    return volume
+  elif shape == 'sphere':
+    radius = float(input('What is the radius of the sphere? '))
+    volume = 4/3 * math.pi * radius ** 3
+    return volume
+  elif shape == 'pyramid':
+    base = float(input('What is the base of the pyramid? '))
+    height = float(input('What is the height of the pyramid? '))
+    volume = base ** 2 * height / 3
+    return volume
+  elif shape == 'prism':
+    base = float(input('What is the base of the prism? '))
+    height = float(input('What is the height of the prism? '))
+    volume = base * height
+    return volume
+  else:
+    return 'Invalid shape'
+
+guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)\n6 = Unit Conversion\n7 = Area of a shape\n8 = Volume of a shape\n')
 
 typeOfMath = int(input('Enter the type of math you want to do: '))
 if typeOfMath == 1:
@@ -189,5 +268,9 @@ elif typeOfMath == 5:
   print(f"The answer is {advancedMath()}")
 elif typeOfMath == 6:
   unitConversion()
+elif typeOfMath == 7:
+  print(areaOfShape)
+elif typeOfMath == 8:
+  print(volumeOfShape)
 else:
   print('Invalid input')
