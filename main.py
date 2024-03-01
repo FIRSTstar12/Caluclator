@@ -98,8 +98,83 @@ def unitRates():
     return simp
   else:
     return f"{numerator}/{denominator}"
-
-guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)\n')
+#unit Conversion m, km, cm, mm, mi
+def unitConversion():
+  print('m = meter\n km = kilometer\n cm = centimeter\n mm = millimeter\n mi = mile')
+  unit = input('What unit are you converting from? ')
+  unit2 = input('What unit are you converting to? ')
+  num = float(input('How much of the unit are you converting? '))
+#cm and m
+  if (unit == 'cm') and (unit2 == 'm'):
+    cmToM = num / 100
+    print(cmToM)
+  elif (unit == 'm') and (unit2 == 'cm'):
+    mToCm = num * 100
+    print(mToCm)
+#cm and km
+  elif (unit == 'cm') and (unit2 =='km'):
+    cmToKm = num / 100000
+    print(cmToKm)
+  elif (unit == 'km') and (unit2 == 'cm'):
+    kmToCm = num * 100000
+    print(kmToCm)
+#cm and mi
+  elif (unit == 'cm') and (unit2 == 'mi'):
+    cmToMi = num / 160934
+    print(cmToMi)
+  elif (unit == 'mi') and (unit2 == 'cm'):
+    miToCm = num * 160934
+    print(miToCm)
+#cm and mm
+  elif (unit == 'mm') and (unit2 == 'cm'):
+    mmToCm = num / 10
+    print(mmToCm)
+  elif (unit == 'cm') and (unit2 == 'mm'):
+    cmToMm = num * 10
+    print(cmToMm)
+#km and mi
+  elif(unit == 'km') and (unit2 == 'mi'):
+    kmToMi = num / 1.609
+    print(kmToMi)
+  elif(unit == 'mi') and (unit2 == 'km'):
+    miToKm = num * 1.609
+    print(miToKm)
+#km and m
+  elif(unit == 'km') and (unit2 == 'm'):
+    kmToM = num * 1000
+    print(kmToM)
+  elif(unit == 'm') and (unit2 == 'km'):
+    mToKm = num / 1000
+    print(mToKm)
+#km and mm
+  elif(unit == 'km') and (unit2 == 'mm'):
+    kmToMm = num * 1000000
+    print(kmToMm)
+  elif(unit == 'mm') and (unit2 == 'km'):
+    mmToKm = num / 1000000
+    print(mmToKm)
+#mm and m
+  elif(unit == 'mm') and (unit2 == 'm'):
+    mmToM = num / 1000
+    print(mmToM)
+  elif(unit == 'm') and (unit2 == 'mm'):
+    mToMm = num * 1000
+    print(mToMm)
+#mm and mi
+  elif(unit == 'mm') and (unit2 == 'mi'):
+    mmToMi = num / 160934
+    print(mmToMi)
+  elif(unit == 'mi') and (unit2 == 'mm'):
+    miToMm = num * 160934
+    print(miToMm)
+#m and mi
+  elif(unit == 'm') and (unit2 == 'mi'):
+    mToMi = num / 1609.34
+    print(mToMi)
+  elif (unit == 'mi') and (unit == 'm'): 
+    miToM = num * 1609.34
+    print(miToM)
+guide = print('1 = Basic Math(+,-,*,\) \n2 = Fraction Simplification\n3 = Systeme of Equations\n4 = Unit Rate\n5 = Advanced Math(^,sqrt,abs)\n6 = Unit Conversion\n')
 
 typeOfMath = int(input('Enter the type of math you want to do: '))
 if typeOfMath == 1:
@@ -112,5 +187,7 @@ elif typeOfMath == 4:
   print(f"Your unit rate is: {unitRates()}")
 elif typeOfMath == 5:
   print(f"The answer is {advancedMath()}")
+elif typeOfMath == 6:
+  unitConversion()
 else:
   print('Invalid input')
